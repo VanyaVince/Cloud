@@ -7,7 +7,7 @@ public class App {
     //  public static Scanner in = new Scanner(System.in);
     public static int Production_max = 1000;
     public static int k1 = 100;
-    public static int k2 = 200;
+    public static int k2 = 200;54669546546
     public static int k3 = 300;
     public static int price1 = 100;
     public static int price2 = 90;
