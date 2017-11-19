@@ -7,7 +7,7 @@ public class App {
     //  public static Scanner in = new Scanner(System.in);
     public static int Production_max = 1000;
     public static int k1 = 100;
-    public static int k2 = 200;54669546546
+    public static int k2 = 200;
     public static int k3 = 300;
     public static int price1 = 100;
     public static int price2 = 90;
@@ -15,21 +15,21 @@ public class App {
 
     public static void main(String[] args) {
 
-        int earnedMoney = 0;
+    //    int earnedMoney = 0;
         int producedGoods = produceGoods();
-        int goodsCount = producedGoods;
+     //   int goodsCount = producedGoods;
 
-        int goodsForFirstShop = getGoodsForShop(1);
-        goodsCount -= goodsForFirstShop;
-        int goodsForSecondShop = getGoodsForShop(2);
-        goodsCount -= goodsForSecondShop;
-        int goodsForThirdShop = getGoodsForShop(3);
-        goodsCount -= goodsForThirdShop;
+     //   int goodsForFirstShop = getGoodsForShop(1);
+     //   goodsCount -= goodsForFirstShop;
+    //    int goodsForSecondShop = getGoodsForShop(2);
+     //   goodsCount -= goodsForSecondShop;
+     //   int goodsForThirdShop = getGoodsForShop(3);
+     //   goodsCount -= goodsForThirdShop;
 
 
-        earnedMoney += sellGoods(goodsForFirstShop, 1);
-        earnedMoney += sellGoods(goodsForSecondShop, 2);
-        earnedMoney += sellGoods(goodsForThirdShop, 3);
+     //   earnedMoney += sellGoods(goodsForFirstShop, 1);
+     //   earnedMoney += sellGoods(goodsForSecondShop, 2);
+      //  earnedMoney += sellGoods(goodsForThirdShop, 3);
 
 
         int soldGoods = producedGoods - goodsCount;
@@ -45,6 +45,7 @@ public class App {
 
     public static int getGoodsForShop(int shopNumber) {
         if (shopNumber == 1) {
+
 
             return k1;
         }
