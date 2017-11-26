@@ -2,7 +2,7 @@ import java.util.*;
 
 public class App {
     public static void main(String[] args) {
-        task1();
+        //task1();
         task2();
 
     }
@@ -43,16 +43,20 @@ public class App {
 
     public static void task2() {
         int sum = 0;
-        int[] Arr = {10, -5, 16, 99, -46, -1, 50};
-        for (int x = 0; x < 7; x++) {
-            System.out.println(Arr[x]);
-        }
-        for (int x = 0; x < 7; x++) {
-            if (Arr[x] > 0) {
-                x = Arr[x];
+        int[] arr = {10, -5, 16, 99, -46, -1, 50};
+        for (int x = 0; x < arr.length; x++) {
 
+            if (arr[x] > 0) {
+               int s = arr[x];
+                System.out.println(s);
+                sum += s;
+                System.out.println(sum);
             }
-            System.out.println(x);
+
+
+
+
         }
+
     }
 }
