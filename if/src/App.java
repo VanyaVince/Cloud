@@ -50,13 +50,9 @@ public class App {
                int s = arr[x];
                 System.out.println(s);
                 sum += s;
-                System.out.println(sum);
             }
-
-
-
-
         }
+        System.out.println("Сумма положительных чисел = " + sum);
 
     }
 }
