@@ -5,8 +5,8 @@ public class App {
         // task1();
         // task2();
         // task3();
-        //task4();
-        task5();
+        task4();
+
     }
 
     public static void task1() {
@@ -90,24 +90,8 @@ public class App {
         }
     }
 
+
     public static void task4() {
-
-        Scanner scn = new Scanner(System.in);
-        System.out.println("Введите число");
-        int k = scn.nextInt();
-        while (k > 0) {
-
-            System.out.println(k);
-            k--;
-            if (k / 3 == 0) {
-                System.out.println();
-            } else {
-                System.out.println(1111);
-            }
-        }
-    }
-
-    public static void task5() {
         Scanner scn = new Scanner(System.in);
         System.out.println("Введите число");
         int k = scn.nextInt();
