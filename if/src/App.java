@@ -2,9 +2,11 @@ import java.util.*;
 
 public class App {
     public static void main(String[] args) {
-       // task1();
-       // task2();
-        task3();
+        // task1();
+        // task2();
+        // task3();
+        //task4();
+        task5();
     }
 
     public static void task1() {
@@ -83,8 +85,39 @@ public class App {
             case 7:
                 System.out.println("Воскресенье");
                 break;
-                default:
-                    System.out.println("Задан неверный формат");
+            default:
+                System.out.println("Задан неверный формат");
+        }
+    }
+
+    public static void task4() {
+
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Введите число");
+        int k = scn.nextInt();
+        while (k > 0) {
+
+            System.out.println(k);
+            k--;
+            if (k / 3 == 0) {
+                System.out.println();
+            } else {
+                System.out.println(1111);
+            }
+        }
+    }
+
+    public static void task5() {
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Введите число");
+        int k = scn.nextInt();
+
+        while (k > 0) {
+            k--;
+            if (!(k % 3 == 0)) {
+                System.out.println(k);
+
+            }
         }
     }
 }
