@@ -3,11 +3,11 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args) {
-        Task1();
-        Task2();
-        Task3();
-        Task4();
-        Task5();
+        //    Task1();
+        //    Task2();
+        //    Task3();
+        //    Task4();
+        //   Task5();
     }
 
     public static void Task1() {
@@ -64,14 +64,15 @@ public class App {
         int b = scn.nextInt();
         if (a > b) {
             System.out.println("The first number more the second");
-            if (a < b) {
-                System.out.println("The first number less the second");
-                if (a == b) {
-                    System.out.println("Both number are equal");
-                }
-            }
+        }
+        if (a < b) {
+            System.out.println("The first number less the second");
+        }
+        if (a == b) {
+            System.out.println("Both number are equal");
         }
     }
+
 
     public static void Task5() {
         Scanner scn = new Scanner(System.in);
@@ -86,4 +87,10 @@ public class App {
 
 
     }
+
+    public static void Massive() {
+        Math.pow();
+
+    }
+
 }
