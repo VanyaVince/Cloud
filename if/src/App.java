@@ -2,9 +2,9 @@ import java.util.*;
 
 public class App {
     public static void main(String[] args) {
-        //task1();
-        task2();
-
+       // task1();
+       // task2();
+        task3();
     }
 
     public static void task1() {
@@ -47,12 +47,44 @@ public class App {
         for (int x = 0; x < arr.length; x++) {
 
             if (arr[x] > 0) {
-               int s = arr[x];
+                int s = arr[x];
                 System.out.println(s);
                 sum += s;
             }
         }
         System.out.println("Сумма положительных чисел = " + sum);
 
+    }
+
+    public static void task3() {
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Введите день недели");
+        int k = scn.nextInt();
+        switch (k) {
+            case 1:
+                System.out.println("Понедельник");
+                break;
+            case 2:
+                System.out.println("Вторник");
+                break;
+
+            case 3:
+                System.out.println("Среда");
+                break;
+            case 4:
+                System.out.println("Четверг");
+                break;
+            case 5:
+                System.out.println("Пятница");
+                break;
+            case 6:
+                System.out.println("Суббота");
+                break;
+            case 7:
+                System.out.println("Воскресенье");
+                break;
+                default:
+                    System.out.println("Задан неверный формат");
+        }
     }
 }
