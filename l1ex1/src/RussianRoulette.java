@@ -93,12 +93,8 @@ public class RussianRoulette {
             for (int a = 0; a < 10; a++) {
                 System.out.print(smail[x][a] +"\t");
             }
-          System.out.println();
-
+            System.out.println();
         }
-
     }
-
-
-    }
+}
 
