@@ -91,9 +91,9 @@ public class RussianRoulette {
         smail[7][9] = 0;
         for (int x = 0; x < 8; x++) {
             for (int a = 0; a < 10; a++) {
-                System.out.print(smail[x][a] + "\t");
+                System.out.print(smail[x][a] +"\t");
             }
-            System.out.println();
+          System.out.println();
 
         }
 
