@@ -46,8 +46,8 @@ public class App {
             Numbers[i] = ((int) (Math.random() * 500) - 180);
             summ1 += Numbers[i];
             avg1 = summ1 / 4;
-            if (max < Numbers[i]) {
-                max = Numbers[i];
+            if (max < avg1) {
+                max = avg1;
             }
         }
         //System.out.println(Arrays.toString(Numbers));
@@ -58,8 +58,8 @@ public class App {
             Numbers[i] = ((int) (Math.random() * 500) - 180);
             summ2 += Numbers[i];
             avg2 = summ2 / 4;
-            if (max < Numbers[i]) {
-                max = Numbers[i];
+            if (max < avg2) {
+                max = avg2;
             }
         }
         //System.out.println(Arrays.toString(Numbers));
@@ -70,8 +70,8 @@ public class App {
             Numbers[i] = ((int) (Math.random() * 500) - 180);
             summ3 += Numbers[i];
             avg3 = summ3 / 4;
-            if (max < Numbers[i]) {
-                max = Numbers[i];
+            if (max < avg3) {
+                max = avg3;
             }
         }
         //System.out.println(Arrays.toString(Numbers));
@@ -82,8 +82,8 @@ public class App {
             Numbers[i] = ((int) (Math.random() * 500) -180);
             summ4 += Numbers[i];
             avg4 = summ4 / 4;
-            if (max < Numbers[i]) {
-                max = Numbers[i];
+            if (max < avg4) {
+                max = avg4;
             }
         }
         //System.out.println(Arrays.toString(Numbers));
