@@ -1,3 +1,5 @@
+package myProgramm;
+
 public class Clothes extends Good {
     public Clothes (String name, float coefficient) {
         super(name, coefficient);

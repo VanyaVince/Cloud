@@ -1,3 +1,5 @@
+package myProgramm;
+
 public class Book extends Good {
     public Book (String name, float coefficient) {
         super(name, coefficient);

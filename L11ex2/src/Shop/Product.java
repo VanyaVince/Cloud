@@ -1,4 +1,8 @@
-package shopPackage;
+package Shop;
+
+import myProgramm.*;
+
+//package shopPackage;
 public abstract class Product {
     protected String name;
     protected float price;

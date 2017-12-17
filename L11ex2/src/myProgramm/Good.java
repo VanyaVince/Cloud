@@ -1,3 +1,5 @@
+package myProgramm;
+
 public class Good  {
 
     protected String name;
@@ -9,7 +11,7 @@ public class Good  {
         this.coefficient = coefficient;
     }
     public Good(){
-        this.name = "Product";
+        this.name = "Shop.Product";
         this.coefficient = 5.2f;
 
     }
