@@ -1,23 +1,46 @@
 package Shop;
+
 import myProgramm.*;
+
 import java.util.Arrays;
 import java.util.List;
 
 public class Store {
-    private static final List<Good> GOODS = Arrays.asList(new Good(), new Good());
-//    myProgramm.Food meat = new myProgramm.Food("Steik", 4.0f);
-//    myProgramm.Clothes coat = new myProgramm.Clothes("Пальто", 2.3f);
-//    myProgramm.Book potter = new myProgramm.Book("Garry Potter", 1.3f);
+    public static final List<Good> GOODS = Arrays.asList(new Food("Мясо", 16f, "стейк", 1.2f));
+    //,new Clothes("Одежда", 7f, "Пальто", 7.7f));, new Book());
 
-    public static void buy(Human human, Product product) {
+    public static void buy(Human human, Good product) {
         if (human.money < product.price) {
+            try {
+                throw new IllegalArgumentException();
+            } catch (IllegalArgumentException en) {
+                System.out.println("Недостаточно средств");
+            }
+        } else if (!(check(product))) {
             try {
                 throw new IllegalStateException();
             } catch (IllegalStateException en) {
-                System.out.println("Недостаточно средств");
+                System.out.println("Товара нет в магазине");
             }
-            // } else if ()
+        } else {
+            human.money -= product.price;
+            System.out.println("Куплен продукт : " + GOODS + "Оставшиеся деньги : " + human.money);
+            human.PRODUCT.add(product);
+            GOODS.remove(product);
+            product.owner = human;
         }
 
     }
+
+    public static boolean check(Good product) {
+        System.out.println("Что хочу купить :" + product.productName);
+        for (int i = 0; i <= GOODS.size(); i++) {
+            System.out.println("Что есть в магазине :" + GOODS.get(i).productName);
+            if (GOODS.get(i).productName == product.productName) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
+
