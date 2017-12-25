@@ -6,8 +6,6 @@ import Shop.Store;
 import java.util.ArrayList;
 import java.util.List;
 
-import static Shop.Store.GOODS;
-
 public class Human {
 
     public String name;
@@ -29,23 +27,31 @@ public class Human {
         this.power = 5f;
         this.charisma = 3f;
         this.intelligence = 7f;
-        this.money = 15f;
+        this.money = 115f;
     }
 
     public static List<Good> PRODUCT = new ArrayList<Good>();
 
     public String toString() {
-        System.out.println("Имя = " + name + "," + " Сила = " + power + "," + " Харизма = " + charisma + "," +
-                " Ителлект = " + intelligence + "," + " Деньги = " + money);
-        return null;
+        return "Имя = " + name + "," + " Сила = " + power + "," + " Харизма = " + charisma + "," +
+                " Ителлект = " + intelligence + "," + " Деньги = " + money;
     }
 
-    public void consumeAll(Human human) {
-        for (Good i : GOODS) {
-            i.consume(human);
-//        for (int y = 0; y < GOODS.size(); y++){
-//            GOODS.size().consume(human);
+    public void consumeAll() {
+        //System.out.println("Before:" + this);
+        List<Good> consumed = new ArrayList<>();
+        for (Good i : PRODUCT) {
+            if (i.getOwner() == this){
+                i.consume(this);
+                consumed.add(i);
+            }
         }
+        for (Good good: consumed) {
+            PRODUCT.remove(good);
+            System.out.println("Съелось :" + good);
+        }
+
+        //System.out.println("After: " + this);
 
     }
 }

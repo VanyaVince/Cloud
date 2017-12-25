@@ -13,7 +13,15 @@ public class Food extends Good {
         this.coefficient = coefficient;
     }
 
+    @Override
+    public String toString() {
+        return productName;
+    }
+
     public void consume(Human human) {
         human.power = human.power + coefficient;
+        System.out.println("Сила увеличилась :" + coefficient);
     }
+
 }
+

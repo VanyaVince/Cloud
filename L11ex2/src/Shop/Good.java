@@ -7,10 +7,15 @@ public abstract class Good  {
 
 
     protected float price;
+
+    public Human getOwner() {
+        return owner;
+    }
+
     protected Human owner;
 
 
-    public Good(String productNamename, float price) {
+    public Good(String productName, float price) {
 
         this.productName = productName;
         this.price = price;
