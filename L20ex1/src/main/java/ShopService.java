@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.List;
 
 public class ShopService {
@@ -7,7 +8,7 @@ public class ShopService {
         return dao.findAll();
     }
 
-    public void addGoods(List<Good> goods) {
+    public void addGoods(List<Good> goods) throws IOException {
         for (Good good : goods) {
             dao.save(good);
         }

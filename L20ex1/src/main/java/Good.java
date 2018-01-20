@@ -1,14 +1,20 @@
+import java.util.List;
+
 public class Good {
     public String nameOfGood;
-    public int idGood;
+    public int count;
     public int price;
 
     public Good() {
     }
 
-    public Good(String nameOfGood, int idGood, int price) {
+    public Good(String nameOfGood, int count, int price) {
         this.nameOfGood = nameOfGood;
-        this.idGood = idGood;
+        this.count = count;
         this.price = price;
     }
+//    public boolean equals (Object obj){ //спросить метод equals = как работеат в данном случае
+//
+//        return this.nameOfGood =
+//    }
 }

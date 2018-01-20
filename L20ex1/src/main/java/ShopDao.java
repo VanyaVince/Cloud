@@ -26,30 +26,32 @@ public class ShopDao {
         }
         return null;
     }
-//   public String findByName(String name){
-//
-//
-//   }
 
-    public void save(Good good) {
+    public Good findByName(String name) {
         List<Good> goods = findAll();
-        if (good == null) {
+        for (Good good : goods) {
+            if (good.nameOfGood.equals(name)) {
+                return good;
+            }
+        }
+        return null;
+    }
+
+    public void save(Good good) throws IOException {
+        List<Good> goods = findAll();
+        if (good == null) {  // разобрать
             throw new IllegalStateException("Good is null");
         } else {
             goods.add(good);
-            try {
+
                 String listOfGoods = mapper.writeValueAsString(goods);
                 FileOutputStream fos = new FileOutputStream("goods.json");//открытие потока, для чтения файла.
                 fos.write(listOfGoods.getBytes());
                 fos.flush();
                 fos.close();//закрытие потока
-            } catch (IOException e) {
-                e.printStackTrace();
+
             }
-
         }
-
-
     }
 
 //    public Good findByName(String name) {
@@ -80,4 +82,3 @@ public class ShopDao {
 //                .findFirst()
 //                .ifPresent(it -> goods.remove(it));
 //    }
-}
