@@ -2,12 +2,13 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class App {
-    private static final Set<Person> PLAYERS = new HashSet<>();
-    public static void main(String[] args) {
-//        Person.FIRST_NAME.add("Kirill");
-//        Person.FIRST_NAME.add("Darya");
-//        Person.FIRST_NAME.add("Roma");
+    static Person game = new Person();
+    private static int count = 0;
+    public static final Set<Person> PLAYERS = new HashSet<>();
 
+    public static void main(String[] args) {
+        System.out.println("Игроки :");
+        PLAYERS.add(new Person("CIVILIAN"));
         PLAYERS.add(new Person("CIVILIAN"));
         PLAYERS.add(new Person("CIVILIAN"));
         PLAYERS.add(new Person("MAFIA"));
@@ -15,7 +16,15 @@ public class App {
         PLAYERS.add(new Person("CIVILIAN"));
         PLAYERS.add(new Person("MAFIA"));
         for (Person people : PLAYERS) {
-            System.out.println(people.toString());
+            count++;
+            System.out.println(count + ")" + people.toString());
+        }
+
+        game.night(PLAYERS);
+        for (Person people : PLAYERS) {
+            count++;
+            System.out.println(count + ")" + people.toString());
+
         }
     }
 }

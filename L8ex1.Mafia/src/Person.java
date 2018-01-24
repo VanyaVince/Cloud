@@ -1,54 +1,62 @@
 import java.util.*;
 
 public class Person {
-    private Random random = new Random();
+    private static Random random = new Random();
 
-    static final List<String> FIRST_NAME = new ArrayList<>();
+    private static final List<String> FIRST_NAME = new ArrayList<>();
     private static final List<String> LAST_NAME = new ArrayList<>();
 
-    String firstName;
-    String lastName;
-    String profession;
+    private String firstName;
+    private String lastName;
+    private String profession;
 
-    public Person (String profession){
+    Person(String profession) {
+        addToListFirstName("Kirill");
+        addToListFirstName("Darya");
+        addToListFirstName("Roma");
+        addToListFirstName("Vanya");
+        addToListFirstName("Katya");
+        addToListFirstName("Vera");
+        addToListFirstName("Sergei");
+
+        addToListLastName("Zabelich");
+        addToListLastName("Shnip");
+        addToListLastName("Masel");
+        addToListLastName("Sviridovich");
+        addToListLastName("Makarchyk");
+        addToListLastName("Novak");
+        addToListLastName("Radionchik");
+
         this.profession = profession;
         int firstList = random.nextInt(FIRST_NAME.size());
         this.firstName = FIRST_NAME.get(firstList);
         int lastList = random.nextInt(LAST_NAME.size());
         this.lastName = LAST_NAME.get(lastList);
 
-        FIRST_NAME.add("Kirill");
-        FIRST_NAME.add("Darya");
-        FIRST_NAME.add("Roma");
-        FIRST_NAME.add("Vanya");
-        FIRST_NAME.add("Katya");
-        FIRST_NAME.add("Vera");
-        FIRST_NAME.add("Sergei");
-
-        LAST_NAME.add("Zabelich");
-        LAST_NAME.add("Shnip");
-        LAST_NAME.add("Masel");
-        LAST_NAME.add("Sviridovich");
-        LAST_NAME.add("Makarchyk");
-        LAST_NAME.add("Novak");
-        LAST_NAME.add("Radionchik");
     }
 
-//    public void addToListFirstName(String firstName){
-//        FIRST_NAME.add(firstName);
-//    }
-//    public void addToListLastName(String lastName){
-//        FIRST_NAME.add(lastName);
-//    }
+    public Person() {
+    }
 
+    private void addToListFirstName(String firstName) {
+        FIRST_NAME.add(firstName);
+    }
+
+    private void addToListLastName(String lastName) {
+        LAST_NAME.add(lastName);
+    }
 
     @Override
     public String toString() {
-        return "Person{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", profession='" + profession + '\'' +
-                '}';
+        return firstName + " " + lastName + ", статус: " + profession;
+    }
+
+    public Set<Person> night(Set<Person> persons) {
+        Person [] randomNumbersForKillMafia = new Person[persons.size()];
+        int numberRandom = random.nextInt(randomNumbersForKillMafia.length);
+        persons.remove(numberRandom);
+        return persons;
+
     }
 
 }
