@@ -9,7 +9,7 @@ public class Person {
     private String firstName;
     private String lastName;
     String profession;
-    private boolean checkRandom = true;
+
 
     Person(String profession) {
         addToListFirstName("Kirill");
