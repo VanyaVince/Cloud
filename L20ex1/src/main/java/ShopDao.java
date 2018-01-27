@@ -4,6 +4,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
 
 import java.io.*;
+import java.util.Iterator;
 import java.util.List;
 
 public class ShopDao {
@@ -39,20 +40,52 @@ public class ShopDao {
 
     public void save(Good good) throws IOException {
         List<Good> goods = findAll();
-        if (good == null) {  // разобрать
-            throw new IllegalStateException("Good is null");
-        } else {
-            goods.add(good);
+        goods.add(good);
+//        if (good == null) {  // разобрать
+//            throw new IllegalStateException("Good is null");
+//        } else {
+//            Good goodInFile = findByName(good.nameOfGood);
+//
+//            if (goodInFile == null) {
+//                goods.add(good);
+//            } else {
+//                for (Good good1 : goods){
+//                    if (good1.nameOfGood.equals(good.nameOfGood)){
+//                        good1.count += good.count;
+//                        good1.price = good.price;
+//                    }
+//                }
+//
+//            }
 
-                String listOfGoods = mapper.writeValueAsString(goods);
-                FileOutputStream fos = new FileOutputStream("goods.json");//открытие потока, для чтения файла.
-                fos.write(listOfGoods.getBytes());
-                fos.flush();
-                fos.close();//закрытие потока
+        String listOfGoods = mapper.writeValueAsString(goods);
+        FileOutputStream fos = new FileOutputStream("goods.json");//открытие потока, для чтения файла.
+        fos.write(listOfGoods.getBytes());
+        fos.flush();
+        fos.close();//закрытие потока
 
+    }
+
+    public void deleteByName(String name) throws IOException {
+        List<Good> goods = findAll();
+            //if (good.nameOfGood.equals(name)) {
+                Iterator<Good> it = goods.iterator();
+                while (it.hasNext()) {
+                    Good el = it.next();
+            if (el.nameOfGood.equals(name))
+                    it.remove();
+                }
+        String listOfGoods = mapper.writeValueAsString(goods);
+        FileOutputStream fos = new FileOutputStream("goods.json");//открытие потока, для чтения файла.
+        fos.write(listOfGoods.getBytes());
+        fos.flush();
+        fos.close();
             }
         }
-    }
+
+
+
+
 
 //    public Good findByName(String name) {
 //        return goods.stream()
