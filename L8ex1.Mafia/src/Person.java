@@ -8,7 +8,8 @@ public class Person {
 
     private String firstName;
     private String lastName;
-    private String profession;
+    String profession;
+    private boolean checkRandom = true;
 
     Person(String profession) {
         addToListFirstName("Kirill");
@@ -32,17 +33,15 @@ public class Person {
         this.firstName = FIRST_NAME.get(firstList);
         int lastList = random.nextInt(LAST_NAME.size());
         this.lastName = LAST_NAME.get(lastList);
-
-    }
-
-    public Person() {
     }
 
     private void addToListFirstName(String firstName) {
+
         FIRST_NAME.add(firstName);
     }
 
     private void addToListLastName(String lastName) {
+
         LAST_NAME.add(lastName);
     }
 
@@ -50,13 +49,4 @@ public class Person {
     public String toString() {
         return firstName + " " + lastName + ", статус: " + profession;
     }
-
-    public Set<Person> night(Set<Person> persons) {
-        Person [] randomNumbersForKillMafia = new Person[persons.size()];
-        int numberRandom = random.nextInt(randomNumbersForKillMafia.length);
-        persons.remove(numberRandom);
-        return persons;
-
-    }
-
 }
