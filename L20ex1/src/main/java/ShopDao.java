@@ -42,22 +42,6 @@ public class ShopDao {
     public void save(Good good) throws IOException {
         List<Good> goods = findAll();
         goods.add(good);
-//        if (good == null) {  // разобрать
-//            throw new IllegalStateException("Good is null");
-//        } else {
-//            Good goodInFile = findByName(good.name);
-//
-//            if (goodInFile == null) {
-//                goods.add(good);
-//            } else {
-//                for (Good good1 : goods){
-//                    if (good1.name.equals(good.name)){
-//                        good1.count += good.count;
-//                        good1.price = good.price;
-//                    }
-//                }
-//
-//            }
 
         String listOfGoods = mapper.writeValueAsString(goods);
         FileOutputStream fos = new FileOutputStream("goods.json");//открытие потока, для чтения файла.
