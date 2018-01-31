@@ -12,7 +12,8 @@ public class ShopDao {
 
     public List<Good> findAll() {
         try {
-            FileInputStream fis = new FileInputStream("goods.json");
+            FileInputStream fis = new FileInputStream("goods.json");// открытие потока, для чтения файла goods.json
+
             List<Good> goods = mapper.readValue(fis, new TypeReference<List<Good>>() {
             });
             return goods;
@@ -31,7 +32,7 @@ public class ShopDao {
     public Good findByName(String name) {
         List<Good> goods = findAll();
         for (Good good : goods) {
-            if (good.nameOfGood.equals(name)) {
+            if (good.name.equals(name)) {
                 return good;
             }
         }
@@ -44,13 +45,13 @@ public class ShopDao {
 //        if (good == null) {  // разобрать
 //            throw new IllegalStateException("Good is null");
 //        } else {
-//            Good goodInFile = findByName(good.nameOfGood);
+//            Good goodInFile = findByName(good.name);
 //
 //            if (goodInFile == null) {
 //                goods.add(good);
 //            } else {
 //                for (Good good1 : goods){
-//                    if (good1.nameOfGood.equals(good.nameOfGood)){
+//                    if (good1.name.equals(good.name)){
 //                        good1.count += good.count;
 //                        good1.price = good.price;
 //                    }
@@ -63,52 +64,24 @@ public class ShopDao {
         fos.write(listOfGoods.getBytes());
         fos.flush();
         fos.close();//закрытие потока
-
     }
 
     public void deleteByName(String name) throws IOException {
         List<Good> goods = findAll();
-            //if (good.nameOfGood.equals(name)) {
-                Iterator<Good> it = goods.iterator();
-                while (it.hasNext()) {
-                    Good el = it.next();
-            if (el.nameOfGood.equals(name))
-                    it.remove();
-                }
+        Iterator<Good> it = goods.iterator();
+        while (it.hasNext()) {
+            Good el = it.next();
+            if (el.name.equals(name))
+                it.remove();
+        }
         String listOfGoods = mapper.writeValueAsString(goods);
         FileOutputStream fos = new FileOutputStream("goods.json");//открытие потока, для чтения файла.
         fos.write(listOfGoods.getBytes());
         fos.flush();
         fos.close();
-            }
-        }
+    }
+}
 
-
-
-
-
-//    public Good findByName(String name) {
-//        return goods.stream()
-//                .filter(it -> Objects.equals(it.getId(), name))
-//                .findFirst()
-//                .orElse(null);
-//    }
-//
-//    public void save(Good good) {
-//        if (good == null) {
-//            throw new IllegalArgumentException("Good is null");
-//        }
-//        Good oldGood = findByName(good.getId());
-//        if (oldGood == null) {
-//            goods.add(good);
-//        } else {
-//            Integer newPrice = good.getPrice();
-//            Integer newCount = good.getCount() + oldGood.getCount();
-//            goods.remove(oldGood);
-//            goods.add(new Good(good.getId(), newPrice, newCount));
-//        }
-//    }
-//
 //    public void deleteByName(String name) {
 //        goods.stream()
 //                .filter(it -> Objects.equals(it.getId(), name))
