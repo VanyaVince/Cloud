@@ -18,7 +18,7 @@ public class Condition {
         while (checkRandom) {
             int numberRandom = random.nextInt(playGame.size());
             Person person = playGame.get(numberRandom);
-            if (person.profession.equals("CIVILIAN")) {
+            if (person.getProfession().equals("CIVILIAN")) {
                 System.out.println();
                 System.out.println("Ночью был убит(а) мафией: " + playGame.get(numberRandom));
                 System.out.println();
@@ -47,12 +47,12 @@ public class Condition {
         int countMafia = 0;
 
         for (Person personCivilian : persons) {
-            if (personCivilian.profession.equals("CIVILIAN")) {
+            if (personCivilian.getProfession().equals("CIVILIAN")) {
                 countCivilian++;
             }
         }
         for (Person personMafia : persons) {
-            if (personMafia.profession.equals("MAFIA")) {
+            if (personMafia.getProfession().equals("MAFIA")) {
                 countMafia++;
             }
         }
