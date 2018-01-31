@@ -1,19 +1,12 @@
 import java.util.*;
 
-public class Condition {
+public class Game {
     private static Random random = new Random();
 
     private boolean checkRandom = true;
 
     public void night(Set<Person> persons) {
-//      for(Person person : persons){
-//            if (Objects.equals(person.profession, "CIVILIAN")){
-//                persons.remove(person);
-//                System.out.println();
-//                System.out.println("Был убит(а) мафией: " + person.firstName + " " + person.lastName);
-//                break;
-//            }
-//        }
+
         List<Person> playGame = new ArrayList<>(persons);
         while (checkRandom) {
             int numberRandom = random.nextInt(playGame.size());

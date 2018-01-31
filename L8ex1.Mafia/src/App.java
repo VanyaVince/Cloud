@@ -2,7 +2,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class App {
-    private static Condition game = new Condition();
+    private static Game game = new Game();
     static Set<Person> PLAYERS = new HashSet<>();
 
     public static void main(String[] args) {

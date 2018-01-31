@@ -35,12 +35,12 @@ public class PersonUtils {
         LAST_NAME.add(lastName);
     }
 
-    String randomFirstName() {
+    public String randomFirstName() {
         int randomFirstName = random.nextInt(FIRST_NAME.size());
         return FIRST_NAME.get(randomFirstName);
     }
 
-    String randomLastName() {
+    public String randomLastName() {
         int randomFirstName = random.nextInt(LAST_NAME.size());
         return LAST_NAME.get(randomFirstName);
     }
