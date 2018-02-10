@@ -1,4 +1,4 @@
-package myProgramm;
+﻿package myProgramm;
 
 import Shop.Good;
 import Shop.Store;
@@ -46,12 +46,11 @@ public class Human {
                 consumed.add(i);
             }
         }
+
         for (Good good: consumed) {
             PRODUCT.remove(good);
             System.out.println("Съелось :" + good);
         }
-
         //System.out.println("After: " + this);
-
     }
 }
