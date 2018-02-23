@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class Person {
 
     private static final PersonUtils personU = new PersonUtils();

@@ -1,3 +1,6 @@
+﻿import org.codehaus.jackson.map.ObjectMapper;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,13 +24,21 @@ public class Shop {
     }
 
     public String getProductList() {
-        String listOfGoods = " ";
-        for (Good good : ProductsList) {
-//            listOfGoods += String.format("%d: %s ($%d)<br/>", good.idGood, good.nameOfGood, good.price);
-            listOfGoods += "" + good.idGood + ": " + good.nameOfGood + " ($" + good.price + ")" + " количество :" + goods.get(good.idGood) + " <br/>";
+//       String listOfGoods = " ";
+//        for (Good good : ProductsList) {
+//          listOfGoods += String.format("%d: %s ($%d)<br/>", good.idGood, good.nameOfGood, good.price);
+//            listOfGoods += "" + good.idGood + ": " + good.nameOfGood + " ($" + good.price + ")" + " количество :" + goods.get(good.idGood) + " <br/>";
+//        }
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonInString;
+        try {
+            jsonInString = mapper.writeValueAsString(ProductsList);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "error";
         }
+        return jsonInString;
 
-        return listOfGoods;
     }
 
     public void addGoodToShop(String name, int price) {
@@ -37,11 +48,11 @@ public class Shop {
         addToGoodsCount(lastGoodId);
     }
 
-    public void addToGoodsCount (int goodId){
+    public void addToGoodsCount(int goodId) {
         Integer count = goods.get(goodId);
-        if (count == null){
+        if (count == null) {
             goods.put(goodId, 1);
-        }else {
+        } else {
             goods.put(goodId, ++count);
         }
     }
@@ -52,7 +63,6 @@ public class Shop {
                 return good;
             }
         }
-
         return null;
     }
 
@@ -62,13 +72,12 @@ public class Shop {
         if (cart == null) {
             cart = new Cart();
         }
-
         return cart;
     }
 
-    public void addToCart(int accountId, int goodId) {
-        // добавить проверку есть ли товар с таким id в магазине
-       Integer count = goods.get(goodId);
+    public synchronized void addToCart(int accountId, int goodId) {
+
+        Integer count = goods.get(goodId);
         if (count != null && count > 0) {
 
             Cart cart = findCartForAccount(accountId);
@@ -76,15 +85,19 @@ public class Shop {
             cart.addGood(goodId);
             Carts.put(accountId, cart);
             Integer afterCount = goods.get(goodId);
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             afterCount = afterCount - 1;
-            goods.put(goodId, afterCount);
-            System.out.println("Количество оставшихся товаров = " + goods.get(afterCount));
-        }else {
-            throw new IllegalArgumentException("Товара нет в магазине");
 
+            goods.put(goodId, afterCount);
+            System.out.println("Количество оставшихся товаров = " + goods.get(goodId));
+        } else {
+            throw new IllegalArgumentException("Товара нет в магазине");
         }
     }
-
 
     public String showCartInfo(int accountId) {
         Cart cart = findCartForAccount(accountId);
@@ -100,15 +113,11 @@ public class Shop {
             result += good.nameOfGood + " " + quantity + "x $" + good.price + " = " + total + "<br/>";
             summ += total;
         }
-
         result += "Общая сумма: " + summ + "<br/>";
-
         return result;
     }
 
     public void removeCart(int accountId) {
-
         Carts.remove(accountId);
     }
-
 }

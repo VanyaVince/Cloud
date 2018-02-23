@@ -1,4 +1,4 @@
-package com.company;
+﻿package com.company;
 
 public class Main {
 
@@ -32,12 +32,24 @@ public class Main {
         Так, для числа 1005315611000 вывод должен быть 11/09/2001 17:20:11.
         Не использовать класс Date.
     */
+    public void task3 (long miliseconds){
+
+
+    }
+
+
+
+
+
+
+
+
+
 
     public void task2(long milicesconds) {
 
         long years =  milicesconds / this.year_ms;
         long days = milicesconds % this.year_ms / day_ms;
-
 
         years = years + 1970;
 
@@ -70,7 +82,3 @@ public class Main {
         System.out.println(month + days +years + hour + minute + second);
     }
 }
-
-
-
-

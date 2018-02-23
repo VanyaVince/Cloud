@@ -1,4 +1,4 @@
-import java.util.HashMap;
+﻿import java.util.HashMap;
 import java.util.Map;
 
 public class Cart {
@@ -14,7 +14,6 @@ public class Cart {
 
         quantity++;
         goods.put(goodId, quantity);
-
         System.out.println("добавлен товар: " + goodId + " в корзину");
     }
 }

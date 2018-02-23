@@ -29,7 +29,7 @@ public class App {
 
      //   earnedMoney += sellGoods(goodsForFirstShop, 1);
      //   earnedMoney += sellGoods(goodsForSecondShop, 2);
-      //  earnedMoney += sellGoods(goodsForThirdShop, 3);
+        //  earnedMoney += sellGoods(goodsForThirdShop, 3);
 
 
         int soldGoods = producedGoods - goodsCount;

@@ -1,42 +1,37 @@
-import java.util.ArrayList;
-import java.util.List;
+import static spark.Spark.get;
+import static spark.Spark.post;
 
 public class Controller {
-    private Shop shop;
+    static ShopService shopService = new ShopService();
 
-    public Controller(){
-        shop = new Shop();
-    }
+    public static void main(String[] args) {
 
-    public String getGoodsList() {
+        get("/getGoods", (request, response) -> {
+            return shopService.getGoodsList();
+        });
 
-        return shop.getProductList();
-    }
+        get("/addGoodToCart", (request, response) -> {
+            int accountId = Integer.parseInt(request.queryParams("accountId"));
+            int goodId = Integer.parseInt(request.queryParams("goodId"));
+            return shopService.addGoodToCart(accountId, goodId);
+        });
 
-    public String addGoodToCart(int accountId, int goodId) {
-        try {
-            shop.addToCart(accountId, goodId);
+        get("/buyCart", (request, response) -> {
+            int accountId = Integer.parseInt(request.queryParams("accountId"));
+            return shopService.buyCart(accountId);
+        });
+
+        get("/addGoodToShop", (request, response) -> {
+            String goodName = request.queryParams("goodName");
+            int goodPrice = Integer.parseInt(request.queryParams("goodPrice"));
+            shopService.addGoodToShop(goodName, goodPrice);
             return "ok";
-        }
-        catch (IllegalArgumentException e){
-            System.out.println(e);
-            return e.getMessage();
-        }
-    }
+        });
 
-    public String buyCart(int accountId) {
-        String result = shop.showCartInfo(accountId);
-        shop.removeCart(accountId);
-        return result;
-    }
-
-    public void addGoodToShop(String goodName, int goodPrice) {
-
-       shop.addGoodToShop(goodName, goodPrice);
-    }
-
-    public void addGoodsCount(int goodId) {
-
-       shop.addToGoodsCount(goodId);
+        get("/addGoodsCount", (request, response) -> {
+            int goodId = Integer.parseInt(request.queryParams("goodId"));
+            shopService.addGoodsCount(goodId);
+            return "ok";
+        });
     }
 }

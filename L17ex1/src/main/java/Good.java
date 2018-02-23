@@ -9,5 +9,4 @@ public class Good {
         this.idGood = idGood;
         this.price = price;
     }
-
 }

@@ -1,4 +1,4 @@
-import java.util.*;
+﻿import java.util.*;
 
 public class App {
     public static void main(String[] args) {
@@ -28,7 +28,6 @@ public class App {
         System.out.println(Arrays.toString(Arr));
         System.out.println(sum);
     }
-
 
     public static void example2() {
         Scanner scn = new Scanner(System.in);
@@ -124,6 +123,3 @@ public class App {
         }
     }
 }
-
-
-

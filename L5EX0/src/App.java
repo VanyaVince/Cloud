@@ -1,13 +1,13 @@
-import java.util.Scanner;
+﻿import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
-        //    Task1();
-        //    Task2();
-        //    Task3();
-        //    Task4();
-        //   Task5();
+           Task1();
+           Task2();
+           Task3();
+           Task4();
+           Task5();
     }
 
     public static void Task1() {
@@ -45,7 +45,6 @@ public class App {
 
     }
 
-
     public static void Task3() {
         int gramm = 1000;
         System.out.println("Введите количество грамм");
@@ -73,7 +72,6 @@ public class App {
         }
     }
 
-
     public static void Task5() {
         Scanner scn = new Scanner(System.in);
         System.out.println("The first number");
@@ -84,13 +82,5 @@ public class App {
         int c = scn.nextInt();
         int Summ = (a + b - c / a) + c * a * a - (a + b);
         System.out.println("Our number" + Summ);
-
-
     }
-
-    public static void Massive() {
-        Math.pow();
-
-    }
-
 }
