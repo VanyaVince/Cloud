@@ -3,7 +3,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class RussianRoullet {
-    private static int number = 6;
+    private static int numbers = 6;
     private static int point = 0;
     private static int[] level_2 = new int[2];
     private static int[] level_3 = new int[3];
@@ -26,8 +26,8 @@ public class RussianRoullet {
 
                 while (true) {
                     System.out.println("Введите число от 0 до 6");
-                    int n1 = scn.nextInt(number + 1);
-                    int n2 = random.nextInt(number + 1);
+                    int n1 = scn.nextInt(numbers + 1);
+                    int n2 = random.nextInt(numbers + 1);
                     System.out.println("Выпавшее число: " + n2);
                     if (n1 != n2) {
                         point++;
@@ -42,7 +42,7 @@ public class RussianRoullet {
             case (2):
                 while (isGameStillActive) {
                     System.out.println("Введите число от 0 до 6");
-                    int n1 = scn.nextInt(number + 1);
+                    int n1 = scn.nextInt(numbers + 1);
                     for (int i = 0; i < level_2.length; i++) {
                         level_2[i] = ((int) (Math.random() * 7));
 
@@ -65,7 +65,7 @@ public class RussianRoullet {
             case (3):
                 while (isGameStillActive) {
                     System.out.println("Введите число от 0 до 6");
-                    int n1 = scn.nextInt(number + 1);
+                    int n1 = scn.nextInt(numbers + 1);
                     for (int i = 0; i < level_3.length; i++) {
                         level_3[i] = ((int) (Math.random() * 7));
 
