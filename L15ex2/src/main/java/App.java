@@ -1,5 +1,4 @@
 import static spark.Spark.get;
-import static spark.Spark.post;
 
 public class App {
     static Person vanya = new Person("Vanya",23);
