@@ -28,4 +28,5 @@ public class Jesus {
     int getRightHand() {
         return rightHand;
     }
+
 }
