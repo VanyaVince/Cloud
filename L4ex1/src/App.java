@@ -71,4 +71,5 @@ public class App {
         int b = !condition ? first : second;
         System.out.println(b);
     }
+
 }
