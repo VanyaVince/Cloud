@@ -48,5 +48,4 @@ class LogicTest {
 
        assertEquals( 18, logic.multiply(3,3,1,1,1));
    }
-
 }
