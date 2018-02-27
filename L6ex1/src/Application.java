@@ -10,6 +10,7 @@ public class Application {
         task3();
     }
 
+
     private static void task1() {
         int[] numbers = new int[]{40, 194, 15, 538, 1, 89};
 
