@@ -92,8 +92,6 @@ public class App {
         System.out.println("Среднее арифметическое 4-х четырех элементов массива = " + avg4);
         System.out.println();
         System.out.println("Высшее средне арифметическое значение 4-х массивов = " + max);
-
-
     }
 
     public void task4() {
@@ -105,6 +103,5 @@ public class App {
             System.out.println("Выход за пределы массива");
 
         }
-
     }
 }
