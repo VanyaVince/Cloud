@@ -32,6 +32,4 @@ public class Application {
             System.out.println("Массив arrayFirst и arraySecond сходства не имеют");
         }
     }
-
-
 }
