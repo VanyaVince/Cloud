@@ -1,16 +1,14 @@
-import java.util.Objects;
-
 public class App {
-    int sum = 0;
+    private static int sum = 0;
 
-    static void print(Integer... obj) {
-        for (int i = 0; i < obj.length; i++){
-            System.out.print(obj[i].toString() + " " );
-        }
+   private static void print(Integer... obj) {
+       for (Integer anObj : obj) {
+           System.out.print(anObj.toString() + " ");
+       }
         System.out.println();
     }
 
-    static Integer sum(Integer first, Integer second) {
+    private static Integer sum(Integer first, Integer second) {
         return first + second;
     }
 
