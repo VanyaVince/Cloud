@@ -52,5 +52,4 @@ public class Zoo {
     public void printMoney() {
         System.out.println("Бюджет зооапрка " + moneyZoo);
     }
-
 }
